@@ -3,7 +3,7 @@ using FYPBackend.Data;
 using FYPBackend.Models;
 namespace FYPBackend.Controllers
 {
-    [Route("api/controller")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AppointmentController: ControllerBase
     {

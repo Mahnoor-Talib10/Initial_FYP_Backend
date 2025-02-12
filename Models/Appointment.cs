@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FYPBackend.Models
@@ -9,15 +10,13 @@ namespace FYPBackend.Models
         [Key]
         public int AID { get; set; }
         [Required]
-        public string Doctor_Name { get; set; } 
+        public string doctor_ID { get; set; } 
         [Required]
         public string Appointment_Day { get; set; }
         [Required]
-        public string Appointment_Time { get;  set; }
+        public TimeSpan Appointment_Time { get;  set; }
         [Required]
-        public string Patient_Name { get; set; }
-        [Required]
-        public string Patient_email { get; set; }
+        public string patient_ID { get; set; }
         [Required]
         public string Patient_Disease { get; set; }
 

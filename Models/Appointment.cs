@@ -14,7 +14,9 @@ namespace FYPBackend.Models
         [Required]
         public string Appointment_Day { get; set; }
         [Required]
-        public TimeSpan Appointment_Time { get;  set; }
+        public TimeSpan Appointment_Start_Time { get;  set; }
+        [Required]
+        public TimeSpan Appointment_End_Time { get; set; }
         [Required]
         public string patient_ID { get; set; }
         [Required]

@@ -15,6 +15,10 @@ namespace FYPBackend.Controllers
         }
         [HttpPost ("Signup-d")] public async Task<IActionResult> Signup_D([FromBody] Doctor doctor)
         {
+            if (doctor == null)
+            {
+                return BadRequest("Invalid doctor data.");
+            }
             _context.Doctors.Add(doctor);
             await _context.SaveChangesAsync();
             return Ok(new { message = "Doctor Signed Up Successfully!" });
@@ -31,5 +35,17 @@ namespace FYPBackend.Controllers
 
             return Ok(doctors);  // Return the list of doctors
         }
+
+
+        [HttpGet("schedule/{doctorID}")]
+        public IActionResult GetDoctorDetails(int doctorID)
+        {
+            var doctor = _context.Doctors.FirstOrDefault(d => d.Doctor_ID== doctorID);
+            if (doctor == null)
+                return NotFound("Doctor not found.");
+
+            return Ok(doctor);
+        }
     }
 }
+

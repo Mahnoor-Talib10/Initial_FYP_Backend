@@ -21,6 +21,10 @@ namespace FYPBackend.Models
         [Required]
         public string Doctor_Qualification { get; set; }
         [Required]
-        public string Doctor_Clinic_Name { get; set; }  
+        public string Doctor_Clinic_Name { get; set; }
+        [Required]
+        public TimeSpan Duty_Start { get; set; } 
+        [Required]
+        public TimeSpan Duty_End { get; set; }
     }
 }
